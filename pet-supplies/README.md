@@ -1,6 +1,6 @@
 # Pet Supplies App
 
-This is a React Native application for a fictional pet supply store, designed to showcase various pet products across categories like dogs, cats, birds, reptiles, fish, and small animals.
+This is a React application for a fictional pet supply store, designed to showcase various pet products across categories like dogs, cats, birds, reptiles, fish, and small animals.
 
 ---
 
@@ -71,7 +71,7 @@ This is a React Native application for a fictional pet supply store, designed to
 
 ## Tech Stack
 
-- React Native  
+- React  
 - Express
 - MongoDB
 - Ollama
