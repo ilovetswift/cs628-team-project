@@ -16,6 +16,8 @@ function mapProduct(doc) {
     image:
       (firstVariant && firstVariant.image_url) || doc.image_url ||
       'https://via.placeholder.com/300x200.png?text=No+Image',
+    stock: firstVariant && typeof firstVariant.stock !== 'undefined' ? Number(firstVariant.stock) : undefined,
+    serverId: doc._id, // preserve MongoDB identifier for updates/deletes
   };
 }
 
@@ -86,7 +88,18 @@ export default function Products() {
           }}
         >
           {items.map((item) => (
-            <ProductCard key={item.id} product={item} />
+            <ProductCard
+              key={item.id}
+              product={item}
+              onDelete={(id) =>
+                setItems((prev) => prev.filter((p) => p.id !== id))
+              }
+              onUpdate={(updated) =>
+                setItems((prev) =>
+                  prev.map((p) => (p.id === updated.id ? updated : p))
+                )
+              }
+            />
           ))}
         </div>
       )}

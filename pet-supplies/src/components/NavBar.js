@@ -15,6 +15,7 @@ export default function NavBar() {
     { to: '/', label: 'Home' },
     { to: '/products', label: 'Products' },
     { to: '/cart', label: 'Cart' },
+    { to: '/chat', label: 'Chat' },
     { to: '/admin', label: 'Admin' },
   ];
 

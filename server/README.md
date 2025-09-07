@@ -19,7 +19,7 @@ Simple Express server to serve pet store data from MongoDB.
 3. Start the server:
 
    ```bash
-   npm start
+   node server.js
    ```
 
 The server exposes `/products` to fetch the first 50 products from the `pet_store` database.
@@ -30,7 +30,7 @@ You can filter results by pet type using a `petType` query parameter, e.g. `/pro
 1. `cd server`
 2. `npm install`
 3. `export MONGO_URI="mongodb+srv://cs624:cs624@cs624ty.fheakdu.mongodb.net/?retryWrites=true&w=majority&appName=CS624Ty"`
-4. `npm start`
+4. `node server.js`
 
 ## Mongo Schema
 

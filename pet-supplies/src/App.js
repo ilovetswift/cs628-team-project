@@ -5,7 +5,10 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import Cart from './pages/Cart';
 import Admin from './pages/Admin';
+import AddToCartRedirect from './pages/AddToCartRedirect';
 import { CartProvider } from './context/CartContext';
+import { AuthProvider } from './context/AuthContext';
+import Chat from './pages/Chat';
 
 /**
  * The root component wires together the CartProvider and the router.
@@ -16,18 +19,22 @@ import { CartProvider } from './context/CartContext';
  */
 export default function App() {
   return (
-    <CartProvider>
-      <Router>
-        <NavBar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/admin" element={<Admin />} />
-          </Routes>
-        </main>
-      </Router>
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <Router>
+          <NavBar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/chat" element={<Chat />} />
+              <Route path="/cart/add/:id" element={<AddToCartRedirect />} />
+            </Routes>
+          </main>
+        </Router>
+      </CartProvider>
+    </AuthProvider>
   );
 }

@@ -55,24 +55,6 @@ const vendorLogos = [
 export default function Home() {
   return (
     <div style={{ padding: '1rem' }}>
-      {/* Promotional banner */}
-      <div
-        style={{
-          backgroundColor: '#eafaf1',
-          border: '1px solid #c9f4d6',
-          borderRadius: '8px',
-          padding: '1rem',
-          marginBottom: '1.5rem',
-          textAlign: 'center',
-          color: '#2d8659',
-        }}
-      >
-        <h2 style={{ marginBottom: '0.5rem' }}>15% OFF your first order!</h2>
-        <p>
-          Use code <strong>WELCOME15</strong> at checkout
-        </p>
-      </div>
-
       {/* Categories grid */}
       <div
         style={{

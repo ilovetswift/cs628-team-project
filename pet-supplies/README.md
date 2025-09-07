@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Pet Supplies App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React Native application for a fictional pet supply store, designed to showcase various pet products across categories like dogs, cats, birds, reptiles, fish, and small animals.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Home Screen:**  
+  Displays featured categories like Dog Supplies, Cat Supplies, Bird Supplies, and more, with images and descriptions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Tab Navigation:**
+  Bottom tab navigator with screens for:
+  - Home
+  - Products
+  - Cart
+  - Chat
+  - Admin
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Product Filtering:**
+  The home screen lets you filter items by pet type.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+```
+/src
+├── components
+│ ├── CategoryCard.js # Grid tiles used on the home page
+│ ├── NavBar.js # Top navigation with links and cart indicator
+│ └── ProductCard.js # Card layout for individual products
+├── context
+│ ├── AuthContext.js # Manages admin login state
+│ └── CartContext.js # Manages cart state and actions
+├── pages
+│ ├── Home.js # Home page with category grid and promo banner
+│ ├── Products.js # Lists products and allows filtering by pet type
+│ ├── Cart.js # Displays cart contents and controls
+│ ├── Admin.js # Admin dashboard for creating/editing/deleting products
+│ ├── Chat.js # RAG chat interface with streaming responses
+│ └── AddToCartRedirect.js # Helper route for adding items via chat links
+├── App.js # Main entry point; sets up routing and layouts
+├── index.js # ReactDOM bootstrapper
+└── README.md # Project documentation
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `App.js`: Initializes the React Router, wraps pages with context providers, and defines top‑level routes.
+- `NavBar.js`: The global navigation component displayed across pages, including links and a cart icon.
+- `CategoryCard.js`, `ProductCard.js`: Reusable components for listing categories and products.
+- Files under `pages/` correspond to individual routes (e.g. `/`, `/products`, `/cart`, `/admin`, `/chat`), encapsulating their own layout and logic.
+- `AuthContext.js` and `CartContext.js` encapsulate global state for admin authentication and cart contents.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to Run
 
-### `npm run eject`
+1. Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Run the development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Tech Stack
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- React Native  
+- Express
+- MongoDB
+- Ollama
+- React Router
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
